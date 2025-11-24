@@ -1,0 +1,35 @@
+# Radar-to-Text GenAI for ADAS
+
+This repository contains a **Generative AI project for ADAS systems**, where a pretrained LLM (e.g., LLaMA) is fine-tuned to **generate textual descriptions from radar data**. The goal is to create a first practical GenAI model for radar object classification and scene explanation.
+  
+
+---
+
+## 📌 Project Overview
+
+- **Input:** Radar data (range-angle-Doppler tensors or radar BEV maps)  
+- **Output:** Natural language description of detected objects and scene  
+- **Generative AI:** Uses a pretrained **LLaMA** model with **LoRA adapters** for lightweight fine-tuning  
+- **Dataset:** Supports synthetic data for initial experiments; can be extended to **CARRADA** or **RadarScenes**  
+- **Use Case:** ADAS perception, explainable radar object detection, synthetic scenario generation
+
+---
+
+## ⚡ Features
+
+- Fine-tunes a large language model on radar → text mapping  
+- Lightweight LoRA/PEFT adaptation  
+- Compatible with GPU and CPU (FP16 recommended)  
+- Easy-to-extend for real radar datasets or multimodal fusion (camera + radar)
+
+---
+
+## 📂 Repository Structure
+
+radar-genai/
+├── README.md
+├── radar_text_dataset.py # Dataset class for radar-to-text mapping
+├── train.py # Training script using Hugging Face + LoRA
+├── inference.py # Inference example
+├── requirements.txt # Python dependencies
+└── utils/ # Optional utility scripts (visualization, preprocessing)
